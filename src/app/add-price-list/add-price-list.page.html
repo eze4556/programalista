@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Lista de Precios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<div class="hola" >
+
+  <form (ngSubmit)="savePriceList()">
+    <!-- Campo Nombre del Comercio -->
+    <ion-item>
+      <ion-label position="floating">Nombre del Comercio</ion-label>
+      <ion-input [(ngModel)]="priceList.nombreComercio" name="nombreComercio" required></ion-input>
+    </ion-item>
+
+    <!-- Campo Nombre de la Lista -->
+    <ion-item>
+      <ion-label position="floating">Nombre de la Lista</ion-label>
+      <ion-input [(ngModel)]="priceList.nombreLista" name="nombreLista" required></ion-input>
+    </ion-item>
+
+    <!-- Lista de Productos -->
+    <ion-list>
+      <ion-item *ngFor="let product of priceList.productos; let i = index">
+        <ion-label position="floating">Nombre del Producto</ion-label>
+        <ion-input placeholder="Nombre del Producto" [(ngModel)]="priceList.productos[i].nombreProducto" name="nombreProducto{{i}}" required></ion-input>
+
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-input placeholder="Descripción" [(ngModel)]="priceList.productos[i].descripcionProducto" name="descripcionProducto{{i}}" required></ion-input>
+
+        <ion-label position="floating">Precio</ion-label>
+        <ion-input type="number" placeholder="Precio" [(ngModel)]="priceList.productos[i].precioProducto" name="precioProducto{{i}}" required></ion-input>
+
+        <ion-button color="danger" (click)="removeProduct(i)">Eliminar</ion-button>
+      </ion-item>
+    </ion-list>
+
+    <!-- Botón Agregar Producto -->
+    <ion-button expand="full" color="success" (click)="addProduct()">Agregar Producto</ion-button>
+
+    <!-- Botón Guardar Lista -->
+    <ion-button expand="full" type="submit" color="primary">Guardar Lista</ion-button>
+  </form>
+
+  </div>
+</ion-content>

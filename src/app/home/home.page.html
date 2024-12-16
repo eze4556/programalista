@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Gestión de Listas de Precios
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Tarjetas de opciones -->
+  <ion-card button (click)="goToAddPriceList()" class="custom-card">
+    <ion-card-header>
+      <ion-card-title>Agregar Lista</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-icon name="add-circle" class="card-icon" color="primary"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card button (click)="goToViewPriceLists()" class="custom-card">
+    <ion-card-header>
+      <ion-card-title>Ver Listas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-icon name="eye" class="card-icon" color="primary"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,62 @@
+/* Estilo general del contenido */
+ion-content {
+  --background: #f7f7f7; /* Fondo más suave */
+}
+
+/* Estilo de las tarjetas */
+ion-card.custom-card {
+  --background: #4ccc51;
+  --border-radius: 10px;   /* Bordes redondeados */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-bottom: 20px;     /* Espaciado entre las tarjetas */
+  padding: 20px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover al interactuar con la tarjeta */
+ion-card.custom-card:hover {
+  transform: scale(1.05); /* Agranda la tarjeta un poco */
+  --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
+
+/* Personalización del título de la tarjeta */
+ion-card-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #f7f4f4;  /* Color del texto */
+  margin-bottom: 10px; /* Espaciado debajo del título */
+  text-align: center;
+}
+
+/* Estilo del ícono dentro de la tarjeta */
+.card-icon {
+  font-size: 40px;  /* Aumenta el tamaño del ícono */
+  text-align: center;
+  display: block;
+  margin: 0 auto; /* Centra el ícono dentro de la tarjeta */
+  margin-top: 10px;
+  color: #f3f5f8;  /* Color del ícono */
+}
+
+/* Estilo del encabezado */
+ion-header {
+  --background: #3880ff;  /* Fondo azul vibrante */
+  --box-shadow: none;
+}
+
+/* Estilo del toolbar */
+ion-toolbar {
+  --background: #3880ff;
+  --color: white;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+/* Título del encabezado */
+ion-title {
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+}

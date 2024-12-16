@@ -1,0 +1,99 @@
+/* Estilo general para el contenido */
+ion-content {
+  --background: #f5f5f5; /* Fondo claro */
+  padding: 20px; /* Espaciado adecuado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo de los items del formulario */
+ion-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  color: #020502;
+  margin-bottom: 20px; /* Espaciado entre los elementos */
+  --border-radius: 6px; /* Bordes redondeados */
+  --background: #857575; /* Fondo blanco */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo de las etiquetas */
+ion-label {
+  font-size: 14px; /* Tamaño de fuente pequeño */
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* Estilo de los campos de entrada (ion-input) */
+ion-input {
+  // --background: #f9f9f9;
+  --border-radius: 6px;
+  --box-shadow: none;
+  padding: 12px;
+  height: 44px;
+  font-size: 14px;
+  --color: #333;
+}
+
+/* Estilo de los botones */
+ion-button {
+  --border-radius: 6px; /* Bordes redondeados */
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+/* Estilo para el botón de eliminar producto */
+ion-button[color="danger"] {
+  --background: #e74c3c; /* Fondo rojo suave */
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Estilo para el botón de agregar producto */
+ion-button[color="success"] {
+  --background: #2ecc71; /* Fondo verde tranquilo */
+  font-size: 14px;
+  padding: 12px;
+}
+
+/* Estilo de la lista de productos */
+ion-list {
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid #ddd; /* Línea separadora */
+}
+
+/* Estilo de los items dentro de ion-list */
+ion-item {
+  --background: #fff;
+  --border-radius: 6px;
+  margin-bottom: 12px;
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+/* Estilo de los elementos input dentro de ion-item */
+ion-input {
+  margin-bottom: 12px;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Estilo de la barra de herramientas */
+ion-toolbar {
+  --background: #007BFF; /* Fondo azul */
+  --color: white;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+/* Estilo del título de la página */
+ion-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #23d81c;
+  text-align: center;
+}
+

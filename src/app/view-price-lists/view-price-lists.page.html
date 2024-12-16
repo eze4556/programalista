@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listas de Precios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Mostrar listas si no hay una en edición -->
+  <ng-container *ngIf="!listaEnEdicion; else editarListaTemplate">
+    <ion-list>
+      <ion-item *ngFor="let lista of listasDePrecios">
+        <ion-label>
+          <h2>{{ lista.nombreLista }}</h2>
+          <p>{{ lista.nombreComercio }}</p>
+        </ion-label>
+        <ion-button color="primary" (click)="iniciarEdicion(lista)">Editar</ion-button>
+        <ion-button color="danger" (click)="exportToPDF(lista)">
+  <ion-icon slot="start" name="document-text"></ion-icon> PDF
+</ion-button>
+
+<!-- Botón para eliminar la lista con icono de papelera -->
+<ion-button color="danger" (click)="eliminarLista(lista.id)">
+  <ion-icon slot="start" name="trash"></ion-icon>
+</ion-button>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+  <!-- Plantilla para editar una lista -->
+  <ng-template #editarListaTemplate>
+    <ion-list>
+      <ion-item>
+        <ion-label>Nombre de la Lista</ion-label>
+        <ion-input [(ngModel)]="listaEditada.nombreLista" placeholder="Nombre de la Lista"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Nombre del Comercio</ion-label>
+        <ion-input [(ngModel)]="listaEditada.nombreComercio" placeholder="Nombre del Comercio"></ion-input>
+      </ion-item>
+
+      <ion-list-header>
+        <h3>Productos</h3>
+      </ion-list-header>
+
+      <ion-item *ngFor="let producto of listaEditada.productos; let i = index">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">
+              <ion-label>Nombre</ion-label>
+              <ion-input [(ngModel)]="producto.nombreProducto" placeholder="Nombre del Producto"></ion-input>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label>Descripción</ion-label>
+              <ion-input [(ngModel)]="producto.descripcionProducto" placeholder="Descripción"></ion-input>
+            </ion-col>
+            <ion-col size="3">
+              <ion-label>Precio</ion-label>
+              <ion-input type="number" [(ngModel)]="producto.precioProducto" placeholder="Precio"></ion-input>
+            </ion-col>
+            <ion-col size="1">
+              <ion-button color="danger" (click)="eliminarProducto(i)">Eliminar</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item>
+        <ion-button expand="block" color="success" (click)="agregarProducto()">Agregar Producto</ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-button expand="block" color="success" (click)="guardarCambios()">Guardar Cambios</ion-button>
+        <ion-button expand="block" color="medium" (click)="cancelarEdicion()">Cancelar</ion-button>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+</ion-content>
